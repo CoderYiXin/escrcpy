@@ -1,11 +1,15 @@
-import { cloneDeep, keyBy, mergeWith, uniq } from 'lodash-es'
+import { cloneDeep, keyBy, mergeWith, pick, uniq } from 'lodash-es'
 import model from '../model/index.js'
+
+const topFields = getTopFields()
+
+const modelMap = getModelMap()
+
+const modelEntries = Object.entries(modelMap)
 
 export function getTopFields(data = model) {
   return uniq(Object.values(data).map(item => item.field))
 }
-
-const topFields = getTopFields()
 
 export function getModelMap(data = model) {
   const value = Object.entries(data).reduce((obj, [parentId, parentItem]) => {
@@ -27,22 +31,18 @@ export function getModelMap(data = model) {
     return obj
   }, {})
 
-  // console.log('getModelMap.value', value)
-
   return value
 }
 
-export function getDefaultData(parentId) {
-  const modelMap = getModelMap()
+export function getDefaultData(parentId, iteratee) {
+  iteratee = iteratee ?? (value => value)
 
-  const value = Object.entries(modelMap).reduce((obj, [key, data]) => {
-    if (!parentId || data.parentId === parentId) {
-      obj[key] = data.value
+  const value = modelEntries.reduce((obj, [key, item]) => {
+    if (!parentId || item.parentId === parentId) {
+      obj[key] = iteratee(item.value)
     }
     return obj
   }, {})
-
-  // console.log('getDefaultData.value', value)
 
   return value
 }
@@ -52,7 +52,8 @@ export const getStoreData = (scope) => {
 
   topFields.forEach((key) => {
     const storeValue = window.appStore.get(key) || {}
-    if (key === 'scrcpy') {
+
+    if (['scrcpy'].includes(key)) {
       Object.assign(value, storeValue[scope || 'global'])
       return
     }
@@ -60,14 +61,12 @@ export const getStoreData = (scope) => {
     Object.assign(value, storeValue)
   })
 
-  // console.log('getStoreData.value', value)
+  const includeKeys = Object.keys(modelMap)
 
-  return value
+  return pick(value, includeKeys)
 }
 
 export function setStoreData(data, scope) {
-  const modelMap = getModelMap()
-
   const storeModel = topFields.reduce((obj, key) => {
     obj[key] = {}
     return obj
@@ -85,13 +84,12 @@ export function setStoreData(data, scope) {
 
   const storeList = Object.entries(storeModel).reduce((arr, [field, value]) => {
     arr.push({
-      field: field === 'scrcpy' ? `scrcpy.${scope}` : field,
+      field: field === 'scrcpy' ? ['scrcpy', scope] : field,
       value,
     })
+
     return arr
   }, [])
-
-  // console.log('setStoreData.storeList', storeList)
 
   storeList.forEach((item) => {
     window.appStore.set(item.field, item.value)
@@ -120,11 +118,10 @@ export function mergeConfig(object, sources) {
   return value
 }
 
-export const getOtherFields = (excludeKey = '') => {
-  const modelMap = getModelMap()
-  const value = Object.values(modelMap).reduce((arr, item) => {
-    if (item.parentField !== excludeKey) {
-      arr.push(item.field)
+export function getScrcpyExcludeKeys() {
+  const value = modelEntries.reduce((arr, [key, item]) => {
+    if (item.customized || ['common'].includes(item.parentId)) {
+      arr.push(key)
     }
     return arr
   }, [])

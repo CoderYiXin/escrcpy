@@ -31,7 +31,7 @@
     "extraResources": {
       "from": "electron/resources/extra",
       "to": "extra",
-      "filter": ["common", "win"]
+      "filter": ["common", "win", "win-${arch}"]
     }
   },
   "nsis": {
@@ -48,29 +48,28 @@
     "requestExecutionLevel": "user"
   },
   "appx": {
-    "identityName": "",
-    "publisher": "",
-    "applicationId": "",
+    "identityName": "viarotel.Escrcpy",
+    "publisher": "CN=E67CC10B-A1BE-413C-BC3B-6E1137E0742D",
     "publisherDisplayName": "viarotel",
-    "languages": ["zh-CN", "en-US"]
+    "languages": ["zh-CN", "en-US", "zh-TW"]
   },
   "mac": {
     "icon": "logo.icns",
     "target": [
       {
         "target": "dmg",
-        "arch": ["universal", "x64", "arm64"]
+        "arch": ["x64", "arm64"]
       },
       {
         "target": "zip",
-        "arch": ["universal", "x64", "arm64"]
+        "arch": ["x64", "arm64"]
       }
     ],
     "artifactName": "${productName}-${version}-mac-${arch}.${ext}",
     "extraResources": {
       "from": "electron/resources/extra",
       "to": "extra",
-      "filter": ["common", "mac"]
+      "filter": ["common", "mac", "mac-${arch}"]
     },
     "x64ArchFiles": "Contents/Resources/extra/**/*",
     "entitlementsInherit": "entitlements.mac.plist",
@@ -85,7 +84,6 @@
   },
   "linux": {
     "icon": "logo.icns",
-    "desktop": "logo",
     "maintainer": "viarotel@qq.com",
     "category": "Utility",
     "target": [
@@ -102,7 +100,7 @@
     "extraResources": {
       "from": "electron/resources/extra",
       "to": "extra",
-      "filter": ["common", "linux"]
+      "filter": ["common", "linux", "linux-${arch}"]
     }
   },
   "asar": true,

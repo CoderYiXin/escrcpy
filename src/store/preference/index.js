@@ -1,26 +1,25 @@
-import { defineStore } from 'pinia'
 import { cloneDeep, get, pickBy, set } from 'lodash-es'
-import model from './model/index.js'
+
+import { defineStore } from 'pinia'
 
 import {
   getDefaultData,
-  getOtherFields,
+  getScrcpyExcludeKeys,
   getStoreData,
   getTopFields,
   mergeConfig,
   setStoreData,
 } from './helpers/index.js'
+import model from './model/index.js'
 
-import { replaceIP, restoreIP } from '@/utils/index.js'
+import command from '$/utils/command/index.js'
 
 const { adbPath, scrcpyPath, gnirehtetPath } = window.electron?.configs || {}
 
 export const usePreferenceStore = defineStore({
   id: 'app-preference',
   state() {
-    const deviceScope = restoreIP(
-      window.appStore.get('scrcpy.deviceScope') || 'global',
-    )
+    const deviceScope = window.appStore.get('scrcpy.deviceScope') || 'global'
 
     const recordKeys = Object.values(model?.record?.children || {}).map(
       item => item.field,
@@ -38,13 +37,8 @@ export const usePreferenceStore = defineStore({
       model: cloneDeep(model),
       data: { ...getDefaultData() },
       deviceScope,
-      excludeKeys: [
-        '--display-overlay',
-        '--camera',
-        '--video-code',
-        '--audio-code',
-        ...getOtherFields('scrcpy'),
-      ],
+
+      scrcpyExcludeKeys: getScrcpyExcludeKeys(),
       recordKeys,
       cameraKeys,
       otgKeys,
@@ -53,19 +47,13 @@ export const usePreferenceStore = defineStore({
   getters: {},
   actions: {
     getDefaultData,
+
     init(scope = this.deviceScope) {
-      let data = mergeConfig(getDefaultData(), getStoreData())
-
-      if (scope !== 'global') {
-        data = mergeConfig(data, getStoreData(replaceIP(scope)))
-      }
-
-      this.data = data
-
+      this.data = this.getData(scope)
       return this.data
     },
     setScope(value) {
-      this.deviceScope = replaceIP(value)
+      this.deviceScope = value
       window.appStore.set('scrcpy.deviceScope', this.deviceScope)
       this.init()
     },
@@ -87,7 +75,7 @@ export const usePreferenceStore = defineStore({
         delete pickData.gnirehtetPath
       }
 
-      setStoreData(pickData, replaceIP(scope))
+      setStoreData(pickData, scope)
 
       this.init(scope)
     },
@@ -101,7 +89,7 @@ export const usePreferenceStore = defineStore({
         fields.forEach((key) => {
           if (key === 'scrcpy') {
             this.deviceScope = scope
-            window.appStore.set(`scrcpy.${replaceIP(scope)}`, {})
+            window.appStore.set(['scrcpy', 'scope'], {})
             return false
           }
           window.appStore.set(key, {})
@@ -126,68 +114,54 @@ export const usePreferenceStore = defineStore({
       this.init()
     },
     getData(scope = this.deviceScope) {
-      const value = this.init(scope)
+      let value = mergeConfig(getDefaultData(), getStoreData())
+
+      if (scope !== 'global') {
+        value = mergeConfig(value, getStoreData(scope))
+      }
+
       return value
     },
 
-    getScrcpyArgs(scope = this.deviceScope, { isRecord = false } = {}) {
-      const data = this.getData(scope)
-      console.log('getScrcpyArgs.data', data)
+    scrcpyParameter(
+      scope = this.deviceScope,
+      { isRecord = false, isCamera = false, isOtg = false, excludes = [] } = {},
+    ) {
+      const data = typeof scope === 'object' ? scope : this.getData(scope)
 
       if (!data) {
         return ''
       }
 
-      const valueList = Object.entries(data).reduce((arr, [key, value]) => {
-        if (!value && typeof value !== 'number') {
-          return arr
+      const params = Object.entries(data).reduce((obj, [key, value]) => {
+        const shouldExclude
+          = (!value && typeof value !== 'number')
+          || this.scrcpyExcludeKeys.includes(key)
+          || (!isRecord && this.recordKeys.includes(key))
+          || (!isCamera && this.cameraKeys.includes(key))
+          || (!isOtg && this.otgKeys.includes(key))
+          || excludes.includes(key)
+          || excludes.includes(`${key}=${value}`)
+
+        if (shouldExclude) {
+          return obj
         }
 
-        if (this.excludeKeys.includes(key)) {
-          return arr
-        }
+        obj[key] = value
 
-        if (!isRecord) {
-          if (this.recordKeys.includes(key)) {
-            return arr
-          }
-        }
+        return obj
+      }, {})
 
-        if (!this.data['--camera']) {
-          if (this.cameraKeys.includes(key)) {
-            return arr
-          }
-        }
+      let value = command.stringify(params)
 
-        if (!this.data['--otg']) {
-          if (this.otgKeys.includes(key)) {
-            return arr
-          }
-        }
-
-        if (typeof value === 'boolean') {
-          arr.push(key)
-        }
-        else {
-          arr.push(`${key}="${value}"`)
-        }
-
-        return arr
-      }, [])
-
-      if (this.data.scrcpyAppend) {
-        valueList.push(...this.data.scrcpyAppend.split(' '))
+      if (data.scrcpyAppend) {
+        value += ` ${data.scrcpyAppend}`
       }
-
-      const value = valueList.join(' ')
-
-      console.log('getScrcpyArgs.value', value)
 
       return value
     },
     getModel(path) {
       const value = get(this.model, path)
-      // console.log('getModel.value', value)
 
       return value
     },

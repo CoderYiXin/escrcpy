@@ -1,5 +1,5 @@
-import log from 'electron-log/main'
-import { createProxy } from '@electron/helpers/index'
+import { createProxy } from '$electron/helpers/index'
+import log from 'electron-log/main.js'
 
 const levels = Object.keys(log.functions)
 
