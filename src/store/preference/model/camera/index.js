@@ -2,14 +2,6 @@ export default {
   label: 'preferences.camera.name',
   field: 'scrcpy',
   children: {
-    camera: {
-      label: 'preferences.camera.enable.name',
-      field: '--camera',
-      type: 'CameraSwitch',
-      value: undefined,
-      placeholder: 'preferences.camera.enable.placeholder',
-      tips: 'preferences.camera.enable.tips',
-    },
     cameraFacing: {
       label: 'preferences.camera.camera-facing.name',
       field: '--camera-facing',
@@ -42,7 +34,7 @@ export default {
     cameraFps: {
       label: 'preferences.camera.camera-fps.name',
       field: '--camera-fps',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.camera.camera-fps.placeholder',
       append: 'fps',

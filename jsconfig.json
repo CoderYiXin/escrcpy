@@ -2,12 +2,13 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"],
-      "@root/*": ["*"],
-      "@electron/*": ["electron/*"],
-      "@renderer/*": ["src/*"]
+      "$/*": ["src/*"],
+      "$root/*": ["*"],
+      "$electron/*": ["electron/*"],
+      "$renderer/*": ["src/*"],
+      "$control/*": ["control/*"]
     }
   },
   "exclude": ["node_modules", "dist", "dist-electron", "dist-release"],
-  "include": ["src/**/*.js", "src/**/*.jsx", "src/**/*.vue", "electron"]
+  "include": ["src", "electron", "control"]
 }

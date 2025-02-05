@@ -21,9 +21,11 @@ lerna-debug.log*
 # User
 node_modules
 pnpm-lock.yaml
+package-lock.json
+yarn.lock
 *.local
 dist
 dist-ssr
 dist-electron
 dist-release
-svgo
+*.d.ts

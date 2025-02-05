@@ -1,12 +1,8 @@
 import Store from 'electron-store'
-import { isEqual } from 'lodash-es'
+import { isEqual, set } from 'lodash-es'
 import { createProxy } from './index.js'
 
-const appStore = new Store()
-
-// appStore.onDidAnyChange((value) => {
-//   console.log('appStore.onDidAnyChange.value', value)
-// })
+const appStore = new Store({ watch: true })
 
 // 如果没有数据则手动设置值，以保证配置文件生成成功
 if (isEqual(appStore.store, {})) {
@@ -15,7 +11,6 @@ if (isEqual(appStore.store, {})) {
 
 export default {
   ...createProxy(appStore, [
-    'set',
     'get',
     'delete',
     'clear',
@@ -25,7 +20,21 @@ export default {
     'onDidAnyChange',
     'openInEditor',
   ]),
-  ...appStore,
+
   getAll: () => appStore.store,
   setAll: value => (appStore.store = value),
+
+  set(...args) {
+    if (Array.isArray(args[0])) {
+      const tempStore = { ...appStore.store }
+
+      set(tempStore, args[0], args[1])
+
+      appStore.set(tempStore)
+
+      return false
+    }
+
+    appStore.set(...args)
+  },
 }

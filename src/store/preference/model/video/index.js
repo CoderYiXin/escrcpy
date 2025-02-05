@@ -3,6 +3,13 @@ export default {
   field: 'scrcpy',
 
   children: {
+    noVideo: {
+      label: 'preferences.video.disable-video.name',
+      field: '--no-video',
+      type: 'Switch',
+      value: undefined,
+      placeholder: 'preferences.video.disable-video.placeholder',
+    },
     videoSource: {
       hidden: true,
       label: 'preferences.video.video-source.name',
@@ -24,22 +31,22 @@ export default {
     maxSize: {
       label: 'preferences.video.resolution.name',
       field: '--max-size',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.video.resolution.placeholder',
     },
     videoBitRate: {
       label: 'preferences.video.bit.name',
       field: '--video-bit-rate',
-      type: 'Input.number',
+      type: 'Input',
       value: undefined,
       placeholder: 'preferences.video.bit.placeholder',
-      append: 'kbps',
+      append: 'bps',
     },
     maxFps: {
       label: 'preferences.video.refresh-rate.name',
       field: '--max-fps',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.video.refresh-rate.placeholder',
       append: 'fps',
@@ -47,6 +54,7 @@ export default {
     videoCode: {
       label: 'preferences.video.video-code.name',
       field: '--video-code',
+      customized: true,
       type: 'VideoCodecSelect',
       value: undefined,
       placeholder: 'preferences.video.video-code.placeholder',
@@ -83,18 +91,31 @@ export default {
       field: '--video-encoder',
       value: undefined,
     },
-    rotation: {
-      label: 'preferences.video.screen-rotation.name',
-      field: '--rotation',
+    displayOrientation: {
+      label: 'preferences.video.display-orientation.name',
+      field: '--display-orientation',
       type: 'Select',
       value: undefined,
-      placeholder: 'preferences.video.screen-rotation.placeholder',
+      placeholder: 'preferences.video.display-orientation.placeholder',
       options: [
         { label: '0°', value: '0' },
-        { label: '-90°', value: '1' },
-        { label: '180°', value: '2' },
-        { label: '90°', value: '3' },
+        { label: '90°', value: '90' },
+        { label: '180°', value: '180' },
+        { label: '270°', value: '270' },
+        { label: 'flip-0°', value: 'flip0' },
+        { label: 'flip-90°', value: 'flip90' },
+        { label: 'flip-180°', value: 'flip180' },
+        { label: 'flip-270°', value: 'flip270' },
       ],
+    },
+    angle: {
+      label: 'preferences.video.angle.name',
+      field: '--angle',
+      type: 'InputNumber',
+      value: undefined,
+      placeholder: 'preferences.video.angle.placeholder',
+      tips: 'preferences.video.angle.tips',
+      append: 'deg',
     },
     crop: {
       label: 'preferences.video.screen-cropping.name',
@@ -111,18 +132,16 @@ export default {
       placeholder: 'preferences.video.display.placeholder',
       options: [
         { label: '0', value: '0' },
-        { label: '1', value: '1' },
-        { label: '2', value: '2' },
       ],
       props: {
         filterable: true,
         allowCreate: true,
       },
     },
-    displayBuffer: {
+    videoBuffer: {
       label: 'preferences.video.video-buffer.name',
-      field: '--display-buffer',
-      type: 'Input.number',
+      field: '--video-buffer',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.video.video-buffer.placeholder',
       append: 'ms',
@@ -130,7 +149,7 @@ export default {
     v4l2Buffer: {
       label: 'preferences.video.receiver-buffer.name',
       field: '--v4l2-buffer',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.video.receiver-buffer.placeholder',
       append: 'ms',

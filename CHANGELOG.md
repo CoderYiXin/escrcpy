@@ -1,5 +1,758 @@
 # Changelog
 
+## [1.28.6](https://github.com/viarotel-org/escrcpy/compare/v1.28.5...v1.28.6) (2025-02-05)
+
+
+### Bug Fixes
+
+* 🐛 Resolving build errors ([d21fa29](https://github.com/viarotel-org/escrcpy/commit/d21fa290dcaa7fbe7bb61979542feb6b22b2c863))
+
+## [1.28.5](https://github.com/viarotel-org/escrcpy/compare/v1.28.4...v1.28.5) (2025-02-05)
+
+
+### Performance Improvements
+
+* ✅ File management supports selecting directories for uploading ([fd2e639](https://github.com/viarotel-org/escrcpy/commit/fd2e639d1b04f1e3b65b04eb02343830d1302238))
+* ⬆️ Improve QR code connection performance ([b413889](https://github.com/viarotel-org/escrcpy/commit/b413889ed32d1b39387cbdb2844a18fb0349f17b))
+
+## [1.28.4](https://github.com/viarotel-org/escrcpy/compare/v1.28.3...v1.28.4) (2025-01-13)
+
+
+### Bug Fixes
+
+* 🐛 Fix the display ID value type error ([2b7ee79](https://github.com/viarotel-org/escrcpy/commit/2b7ee795a077a6e9197d0a5db3a847aee8144ea8))
+* 🐛 Solve the problem of IPV6 address connection failure ([1a95325](https://github.com/viarotel-org/escrcpy/commit/1a95325884845441987113fbb17c58289a816346))
+
+
+### Performance Improvements
+
+* ♻️ Improve wireless connection stability ([85be898](https://github.com/viarotel-org/escrcpy/commit/85be8980d441c0046ae0854a6fdc88998be7b24c))
+* ⚡️ Optimize the method of obtaining the available displays of the device ([9e31c84](https://github.com/viarotel-org/escrcpy/commit/9e31c847fe91e0d5ccad512e863f9a2746554383))
+* 🐛 Improve wireless connection verification method ([69fecc3](https://github.com/viarotel-org/escrcpy/commit/69fecc3bc59f8f4a968368e48f1f06174255e62c))
+* 👷 Added edge hiding function switch ([d25714a](https://github.com/viarotel-org/escrcpy/commit/d25714a43f0676ab35204d6b4bc7564464eeb3c2))
+
+## [1.28.3](https://github.com/viarotel-org/escrcpy/compare/v1.28.2...v1.28.3) (2024-12-28)
+
+
+### Performance Improvements
+
+* ♻️ Optimize device details performance ([38d1433](https://github.com/viarotel-org/escrcpy/commit/38d1433a82d6c22c9bb6db681533c93e788e4cff))
+
+## [1.28.2](https://github.com/viarotel-org/escrcpy/compare/v1.28.1...v1.28.2) (2024-12-27)
+
+
+### Performance Improvements
+
+* 👷 Optimize the edge hiding function ([d5caaa9](https://github.com/viarotel-org/escrcpy/commit/d5caaa915c5e979c2217357cf74efe20d477c5ba))
+* 📸 Support viewing real-time images and power information of the device ([d262adf](https://github.com/viarotel-org/escrcpy/commit/d262adf54df2a28c734b3db1a5d17bbccd983db9))
+
+## [1.28.1](https://github.com/viarotel-org/escrcpy/compare/v1.28.0...v1.28.1) (2024-12-20)
+
+
+### Performance Improvements
+
+* ♻️ Optimize QR code connection experience ([86f5e69](https://github.com/viarotel-org/escrcpy/commit/86f5e6909b9db949c8611496940aeb9599ced2ec))
+
+## [1.28.0](https://github.com/viarotel-org/escrcpy/compare/v1.27.7...v1.28.0) (2024-12-20)
+
+
+### Features
+
+* ✨ Support pairing and connecting to devices via QR code ([14306b2](https://github.com/viarotel-org/escrcpy/commit/14306b2353b2d70999c6b13ea8715dcf19314be5))
+* 🚀 Supports connecting historical devices via device list ([e0687e8](https://github.com/viarotel-org/escrcpy/commit/e0687e895a5092ed79f6fad3a03fe33f4205c18e))
+
+
+### Bug Fixes
+
+* 🐛 Solve the problem of Windows disabling video forwarding and crashing ([10b902a](https://github.com/viarotel-org/escrcpy/commit/10b902a97bcd86f4f43866279e269ab8be84d2df))
+
+
+### Performance Improvements
+
+* ♻️ Update mirror icon ([c214e5a](https://github.com/viarotel-org/escrcpy/commit/c214e5add6746cf7ec299158cf0e77c7eed21f12))
+* ✅ A new method is adopted to solve the problem of IP type configuration storage ([5488a1e](https://github.com/viarotel-org/escrcpy/commit/5488a1e826e795fbd644a4204ea018f8662adf2e))
+* 🚀 Optimize device connection experience ([0690f2d](https://github.com/viarotel-org/escrcpy/commit/0690f2d4c07b50a162b5c1aa3fdf2d21fe2a83f9))
+* 🚀 Supports display of offline devices ([dcf817f](https://github.com/viarotel-org/escrcpy/commit/dcf817feeeb306a6b1b534c8b7f85e1223af5420))
+
+## [1.27.7](https://github.com/viarotel-org/escrcpy/compare/v1.27.6...v1.27.7) (2024-12-10)
+
+
+### Performance Improvements
+
+* 🚀 Update to scrcpy v3.1 ([7c74c71](https://github.com/viarotel-org/escrcpy/commit/7c74c712112ca80fe818c5f38d4f4f227b0f2590))
+
+## [1.27.6](https://github.com/viarotel-org/escrcpy/compare/v1.27.5...v1.27.6) (2024-12-05)
+
+
+### Bug Fixes
+
+* ♻️ Fixed repeated dependency issues ([9777622](https://github.com/viarotel-org/escrcpy/commit/9777622830e2160ce84511052a79951638ff0771))
+
+
+### Performance Improvements
+
+* ♻️ Optimized contextBridge related improvements for stability ([0e098c3](https://github.com/viarotel-org/escrcpy/commit/0e098c37393b1410584f793bc15d1f76d246c05f))
+* ♻️ Reduce build package size by removing redundant dependencies ([7b61b25](https://github.com/viarotel-org/escrcpy/commit/7b61b25f4e5eadff28bf112e6039b648491d36c1))
+* 🚀 Update to scrcpy v3.0.2 ([7510548](https://github.com/viarotel-org/escrcpy/commit/75105484ab1d2e31b9bce70f8fc03b7c543e190a))
+
+## [1.27.5](https://github.com/viarotel-org/escrcpy/compare/v1.27.4...v1.27.5) (2024-11-29)
+
+
+### Performance Improvements
+
+* ➖ Remove redundant console ([9a67142](https://github.com/viarotel-org/escrcpy/commit/9a67142af64820495da46f46891e222968beeacc))
+
+## [1.27.4](https://github.com/viarotel-org/escrcpy/compare/v1.27.3...v1.27.4) (2024-11-29)
+
+
+### Bug Fixes
+
+* 🐛 Fix automatic release ([c2254aa](https://github.com/viarotel-org/escrcpy/commit/c2254aa27dc0a3ea0223dceb79ac64440a085e33))
+* 🐛 Fixed an issue where macos built-in updates failed ([432eceb](https://github.com/viarotel-org/escrcpy/commit/432ecebea6c8c8c6236fb5ebf9ad84e84201046d))
+
+## [1.27.3](https://github.com/viarotel-org/escrcpy/compare/v1.27.2...v1.27.3) (2024-11-28)
+
+
+### Bug Fixes
+
+* 🐛 Fix for built-in scrcpy not supporting x64 macos ([0d60655](https://github.com/viarotel-org/escrcpy/commit/0d606550d437aaf81094a0783ff4986a8135d74a))
+
+
+### Performance Improvements
+
+* ♻️ Improved device connection stability ([1d603ab](https://github.com/viarotel-org/escrcpy/commit/1d603abb3e591bc0a0a3fed9b7e6c104525e186e))
+* ♻️ Optimized the adb daemon startup failure detection mechanism ([ca6be85](https://github.com/viarotel-org/escrcpy/commit/ca6be8590199f851e09bdf9a61daa0ee8a20bde3))
+* 🧑‍💻 Improve device-based terminal experience ([88a0356](https://github.com/viarotel-org/escrcpy/commit/88a03564a5d7affd5b827b19bf4abfc2e76e4c39))
+
+## [1.27.2](https://github.com/viarotel-org/escrcpy/compare/v1.27.1...v1.27.2) (2024-11-26)
+
+
+### Bug Fixes
+
+* 🐛 Start app to adapt to dark mode ([ae13fde](https://github.com/viarotel-org/escrcpy/commit/ae13fdea07e33953973a8561c6bc4e458811560e))
+
+## [1.27.1](https://github.com/viarotel-org/escrcpy/compare/v1.27.0...v1.27.1) (2024-11-25)
+
+
+### Bug Fixes
+
+* 🐛 Make StartApp compatible with scrcpy v3.0 ([1082e0d](https://github.com/viarotel-org/escrcpy/commit/1082e0d6623a5e91af37ff206c4dc4e6023b64fa))
+
+
+### Performance Improvements
+
+* 🚀 Adjust options to support scrcpy v3.0 ([0602676](https://github.com/viarotel-org/escrcpy/commit/0602676a3e6b06ae1de1a8d7dd2d365646222245))
+* 🚀 Update to scrcpy v3.0 ([bf06382](https://github.com/viarotel-org/escrcpy/commit/bf06382b3a66a7efbf01975f1eac0b092e78d034))
+
+## [1.27.0](https://github.com/viarotel-org/escrcpy/compare/v1.26.4...v1.27.0) (2024-11-21)
+
+
+### Features
+
+* ✨ Support edge hiding function ([14a81de](https://github.com/viarotel-org/escrcpy/commit/14a81de211ec19b9533c8fa57180ba3bf4d8ae3d))
+
+
+### Performance Improvements
+
+* ⬆️ Optimize edge hiding performance ([74a91a4](https://github.com/viarotel-org/escrcpy/commit/74a91a4058692165aaaac77d753df6c78c6e5901))
+
+## [1.26.4](https://github.com/viarotel-org/escrcpy/compare/v1.26.3...v1.26.4) (2024-11-14)
+
+
+### Bug Fixes
+
+* 🐛 Temporarily disable scrcpy integration in macOS ([9bf4d5c](https://github.com/viarotel-org/escrcpy/commit/9bf4d5cfed66466d1c8111cf8b0a44050e727f2a))
+
+## [1.26.3](https://github.com/viarotel-org/escrcpy/compare/v1.26.2...v1.26.3) (2024-11-08)
+
+
+### Bug Fixes
+
+* 🐛 Fix device support audio and video encoding cannot be parsed ([9b7f6a9](https://github.com/viarotel-org/escrcpy/commit/9b7f6a98c28b44fcb9cc8cc8d9011ebe335ba73a))
+* 🐛 Restore the --display-buffer parameter to solve the mirroring problem ([0f3d869](https://github.com/viarotel-org/escrcpy/commit/0f3d869d07ab379e3d735e6c910be19c8c2fb5f1))
+
+
+### Performance Improvements
+
+* ♻️ Support interruption during waiting for wireless connection ([344b385](https://github.com/viarotel-org/escrcpy/commit/344b385d33010d9fcfc53e8759e9f6419bbbfba3))
+* ♻️ Supports retrieving a list of applications ([b1a6ba7](https://github.com/viarotel-org/escrcpy/commit/b1a6ba7ae46f74ef0c9bef3b9a88df0ad65db33f))
+* ⚡️ Optimize startup application performance ([8e94494](https://github.com/viarotel-org/escrcpy/commit/8e94494e43945a611edeef0466d5c4d581b25e05))
+
+## [1.26.2](https://github.com/viarotel-org/escrcpy/compare/v1.26.1...v1.26.2) (2024-11-06)
+
+
+### Bug Fixes
+
+* 🐛 Fix linux build errors ([9b43dc0](https://github.com/viarotel-org/escrcpy/commit/9b43dc0a9c0208520904acedcc6e561d7f64db77))
+
+## [1.26.1](https://github.com/viarotel-org/escrcpy/compare/v1.26.0...v1.26.1) (2024-11-06)
+
+
+### Performance Improvements
+
+* ♻️ No longer building universal packages for macOS ([db5deb4](https://github.com/viarotel-org/escrcpy/commit/db5deb4183ac2a024e054443aee4003237167c58))
+
+## [1.26.0](https://github.com/viarotel-org/escrcpy/compare/v1.25.5...v1.26.0) (2024-11-06)
+
+
+### Features
+
+* ✨ Integrate scrcpy binaries for macos ([85bf096](https://github.com/viarotel-org/escrcpy/commit/85bf0961e5886db80e622cc512d32cff1c83524c))
+* ✨ Supports starting applications for mirroring ([d19e781](https://github.com/viarotel-org/escrcpy/commit/d19e78147152550b0d9f006765e09c955ab0951e))
+
+
+### Bug Fixes
+
+* 🐛 Rename --display-buffer to --video-buffer ([b2bb0ae](https://github.com/viarotel-org/escrcpy/commit/b2bb0aeb72e8359523bf9f108ec6bd4c7823a22c))
+* 🐛 Repair floating action bar start application error ([487e7e2](https://github.com/viarotel-org/escrcpy/commit/487e7e2ec4dc57e6b17132210804f1e2021d67d4))
+* 🩹 Restore the windows build configuration ([9491069](https://github.com/viarotel-org/escrcpy/commit/9491069716a7bf1a79dbfa97b3aa066116951feb))
+
+
+### Performance Improvements
+
+* ♻️ Adjust the position of the start application button ([9833932](https://github.com/viarotel-org/escrcpy/commit/9833932be3fa0e49cf5ba5bfbe5247e0d467aa90))
+* ♻️ When the application fails to start, display the error message ([dbc34d6](https://github.com/viarotel-org/escrcpy/commit/dbc34d63add3cd05ca9327831509e21d7513a04c))
+* ⚡️ Improve the start APP experience ([29e5e1b](https://github.com/viarotel-org/escrcpy/commit/29e5e1b6ebf73777b61e36e223905998a219daa9))
+
+## [1.25.5](https://github.com/viarotel-org/escrcpy/compare/v1.25.4...v1.25.5) (2024-11-05)
+
+
+### Performance Improvements
+
+* ⚡️ Optimize the stability of options that need to dynamically obtain parameters in preference settings ([39bbc98](https://github.com/viarotel-org/escrcpy/commit/39bbc9850bde77aa21d9fdc4f58119541cde2b8f))
+
+## [1.25.4](https://github.com/viarotel-org/escrcpy/compare/v1.25.3...v1.25.4) (2024-10-31)
+
+
+### Performance Improvements
+
+* ♻️ Enhance recording stability ([3dd7525](https://github.com/viarotel-org/escrcpy/commit/3dd75252591b8ea24ff2c02f12355b01b888c650))
+* ♻️ Optimize camera recording stability ([952b2a7](https://github.com/viarotel-org/escrcpy/commit/952b2a72508cc0d9e32089c7c5a17fdb61ec84de))
+* 💄 Normalize control window titles and generated file names ([ccc7f0e](https://github.com/viarotel-org/escrcpy/commit/ccc7f0e734c8ac98d3917a7cc5aefd086d46523f))
+
+## [1.25.3](https://github.com/viarotel-org/escrcpy/compare/v1.25.2...v1.25.3) (2024-10-29)
+
+
+### Bug Fixes
+
+* 🔧 Camera recording and screen off configuration conflict ([4508758](https://github.com/viarotel-org/escrcpy/commit/4508758fb3c7304ccba8936a9b1cecaf001bc6ba))
+
+
+### Performance Improvements
+
+* 🔧 Temporarily disable scheduled tasks that are too far away ([be5e639](https://github.com/viarotel-org/escrcpy/commit/be5e6396e13a86ec1ae0cf09012c954b8a256c4c))
+
+## [1.25.2](https://github.com/viarotel-org/escrcpy/compare/v1.25.1...v1.25.2) (2024-10-29)
+
+
+### Bug Fixes
+
+* 🐛 Resolve default recording error ([358064e](https://github.com/viarotel-org/escrcpy/commit/358064ecd487dd69b635531eb0e2611f14ae5c7c))
+
+## [1.25.1](https://github.com/viarotel-org/escrcpy/compare/v1.25.0...v1.25.1) (2024-10-28)
+
+
+### Miscellaneous Chores
+
+* release 1.25.1 ([f60245b](https://github.com/viarotel-org/escrcpy/commit/f60245b11d9f38d5a61d9e3c59932de95ecef4b0))
+
+## [1.25.0](https://github.com/viarotel-org/escrcpy/compare/v1.24.3...v1.25.0) (2024-10-28)
+
+
+### Features
+
+* ✨ Support to close the device screen when controlling ([a84c775](https://github.com/viarotel-org/escrcpy/commit/a84c775fa1ca507f551c4b0a1499d40d9bc2aedd))
+* 📸 Enhanced recording ([7f10161](https://github.com/viarotel-org/escrcpy/commit/7f10161ad7be72ddcdfcb8bda2aa075e6d748932))
+
+
+### Performance Improvements
+
+* ♻️ Optimize camera recording ([4be2cf4](https://github.com/viarotel-org/escrcpy/commit/4be2cf4f144ffe5694a4abbb35f14dc5bac0bace))
+* ♻️ Script and directory structure optimization ([68378ef](https://github.com/viarotel-org/escrcpy/commit/68378efb51c89095e6b2802bf9936608a156d17a))
+* ⚗️ Experimental support for turning off screen controls ([9555f58](https://github.com/viarotel-org/escrcpy/commit/9555f58df5f1c4bc4a263ddf586c605785a094ef))
+* ⚡️ Optimize scrcpy parameter conversion performance ([18dcd24](https://github.com/viarotel-org/escrcpy/commit/18dcd24e656801fbb811ccc46496e4037d28a137))
+* 💄 Improved Russian display ([ca79e1b](https://github.com/viarotel-org/escrcpy/commit/ca79e1b57d507ba0fc4b2c3dd2411682b3b87105))
+* 📸 Recording camera support ([10d0370](https://github.com/viarotel-org/escrcpy/commit/10d0370b663bc08028633e9dad910a637ea373b6))
+
+## [1.24.3](https://github.com/viarotel-org/escrcpy/compare/v1.24.2...v1.24.3) (2024-10-21)
+
+
+### Performance Improvements
+
+* 💄 Optimize Russian display effect ([5ca39ae](https://github.com/viarotel-org/escrcpy/commit/5ca39ae188ba15af8000a573fc015b51e8c615d0))
+
+## [1.24.2](https://github.com/viarotel-org/escrcpy/compare/v1.24.1...v1.24.2) (2024-09-16)
+
+
+### Bug Fixes
+
+* 🐛 Fix the mirror group bug ([cd7d9cd](https://github.com/viarotel-org/escrcpy/commit/cd7d9cdd3c006f7d73bc70a1730870f277cb0dff))
+
+## [1.24.1](https://github.com/viarotel-org/escrcpy/compare/v1.24.0...v1.24.1) (2024-09-16)
+
+
+### Performance Improvements
+
+* ✨ Update to scrcpy@2.7 to support the gamepad ([0053e87](https://github.com/viarotel-org/escrcpy/commit/0053e87f1a345502430f8f1ce94a59d1c399ddda))
+* ⬆️ Optimize the performance of the floating control bar ([a1c60ec](https://github.com/viarotel-org/escrcpy/commit/a1c60ecd787d2c05bd15109d71a557eb8d58e443))
+* 🚀 Extended floating control bar function ([790e703](https://github.com/viarotel-org/escrcpy/commit/790e70349ac8b938a77cbde3560c410c8fc2a05b))
+
+## [1.24.0](https://github.com/viarotel-org/escrcpy/compare/v1.23.6...v1.24.0) (2024-09-12)
+
+
+### Features
+
+* ✨ Support floating control bar ([8807e50](https://github.com/viarotel-org/escrcpy/commit/8807e5041399acd228ee739c610778272e431bdd))
+
+
+### Performance Improvements
+
+* ✅ Support switching devices on the floating control bar ([50440f5](https://github.com/viarotel-org/escrcpy/commit/50440f5f4b98eed2ceabd0c4fda706ef66eabedd))
+* 💄 Optimize preference setting button layout ([47ae53d](https://github.com/viarotel-org/escrcpy/commit/47ae53d623bf0c8f7a08df2cc2cc5a54bfc8a917))
+
+## [1.23.6](https://github.com/viarotel-org/escrcpy/compare/v1.23.5...v1.23.6) (2024-09-09)
+
+
+### Bug Fixes
+
+* 🐛 Fixed the problem of minimizing the visibility of tray icons ([b0f42aa](https://github.com/viarotel-org/escrcpy/commit/b0f42aa474686649fc7eb4736329539530a3b85a))
+* 🐛 Repair ADB timeout problems ([b5bffc5](https://github.com/viarotel-org/escrcpy/commit/b5bffc562df339851ae68baf3e78cf4dd2ea2cf0))
+
+## [1.23.5](https://github.com/viarotel-org/escrcpy/compare/v1.23.4...v1.23.5) (2024-09-09)
+
+
+### Performance Improvements
+
+* ♻️ Improve ADB connection stability ([7655ba6](https://github.com/viarotel-org/escrcpy/commit/7655ba637c21500e6aaf633aa8ab8132d3687b33))
+
+## [1.23.4](https://github.com/viarotel-org/escrcpy/compare/v1.23.3...v1.23.4) (2024-09-08)
+
+
+### Bug Fixes
+
+* 🐛 Repair part of internationalization Lost dynamics ([d18444f](https://github.com/viarotel-org/escrcpy/commit/d18444f28ba1046018bc419e0068ce12c73b2d48))
+
+## [1.23.3](https://github.com/viarotel-org/escrcpy/compare/v1.23.2...v1.23.3) (2024-09-08)
+
+
+### Performance Improvements
+
+* ♻️ Optimize the performance of equipment interaction column and file manager ([41ffcf5](https://github.com/viarotel-org/escrcpy/commit/41ffcf56603d799f41b0a2292267b504e200de12))
+
+## [1.23.2](https://github.com/viarotel-org/escrcpy/compare/v1.23.1...v1.23.2) (2024-09-07)
+
+
+### Performance Improvements
+
+* 🚀 Support file manager upload to the current directory ([737c2a3](https://github.com/viarotel-org/escrcpy/commit/737c2a36e263de69d5b7c6250bc2489eba11d6dd))
+
+## [1.23.1](https://github.com/viarotel-org/escrcpy/compare/v1.23.0...v1.23.1) (2024-09-07)
+
+
+### Performance Improvements
+
+* ⬆️ Update dependencies ([8b03862](https://github.com/viarotel-org/escrcpy/commit/8b0386258a900d841e712413358f5df86457a021))
+
+## [1.23.0](https://github.com/viarotel-org/escrcpy/compare/v1.22.4...v1.23.0) (2024-09-07)
+
+
+### Features
+
+* ✨ Support graphic file manager ([8155723](https://github.com/viarotel-org/escrcpy/commit/815572303aef8400dc08b35c1bdce5608dfd2cb6))
+* 🚀 Initially add a new file manager ([94ee007](https://github.com/viarotel-org/escrcpy/commit/94ee0070efa19688e9ec3ec90c9301cc958bae35))
+
+
+### Performance Improvements
+
+* ➖ Remove copilot ([6ca7612](https://github.com/viarotel-org/escrcpy/commit/6ca7612c0244b7a7d92d96c723cc7faa2462928b))
+
+## [1.22.4](https://github.com/viarotel-org/escrcpy/compare/v1.22.3...v1.22.4) (2024-08-03)
+
+
+### Bug Fixes
+
+* 🐛 plan task Remove operation bug ([5205935](https://github.com/viarotel-org/escrcpy/commit/520593554f7224a4bb143aaa4b84db52b077421d))
+
+
+### Performance Improvements
+
+* 💄 Dark mode effect ([00d3495](https://github.com/viarotel-org/escrcpy/commit/00d34953832eec22ee4ac44f61f1fbc029f4ed84))
+
+## [1.22.3](https://github.com/viarotel-org/escrcpy/compare/v1.22.2...v1.22.3) (2024-08-03)
+
+
+### Performance Improvements
+
+* ♻️ Update scrcpy to 2.6.1 ([1eef9d2](https://github.com/viarotel-org/escrcpy/commit/1eef9d23e4ed1576a0120102132440ef294f8c71))
+
+## [1.22.2](https://github.com/viarotel-org/escrcpy/compare/v1.22.1...v1.22.2) (2024-07-25)
+
+
+### Performance Improvements
+
+* 💄 Optimize the display effect of the dark mode ([38f854b](https://github.com/viarotel-org/escrcpy/commit/38f854b6db8bf94b31a1f1f6db54fc55a99d8e8c))
+* 💄 Optimize the display effect of the quick operation bar ([7b3c4db](https://github.com/viarotel-org/escrcpy/commit/7b3c4db83a285dc14a5f440843a3c162cee2d163))
+* 💄 Optimize the display effect of the tabs bar ([5b2d41c](https://github.com/viarotel-org/escrcpy/commit/5b2d41c75a506edd25e4d6073bc4d1b12b593bf3))
+
+## [1.22.1](https://github.com/viarotel-org/escrcpy/compare/v1.22.0...v1.22.1) (2024-07-25)
+
+
+### Bug Fixes
+
+* 🐛 Fixed asset publishing issues ([222f626](https://github.com/viarotel-org/escrcpy/commit/222f6260e12a8891e51ca9c86160d45c751dc255))
+
+## [1.22.0](https://github.com/viarotel-org/escrcpy/compare/v1.21.4...v1.22.0) (2024-07-25)
+
+
+### Features
+
+* 🚀 Add a scheduled task list ([d72202b](https://github.com/viarotel-org/escrcpy/commit/d72202b3117fd5b98b5a96dd95fad37579fc7abe))
+* 🚀 Add basic timing task function ([04a7608](https://github.com/viarotel-org/escrcpy/commit/04a760897e7dccc91acc1d15af016fbcc1acc380))
+* 🚀 Add timing task entrance ([8393c85](https://github.com/viarotel-org/escrcpy/commit/8393c854b312abf616367f797c3d300217dcd9d3))
+* 🚀 添加定时任务入口 ([6ce66d4](https://github.com/viarotel-org/escrcpy/commit/6ce66d4d6349554333988505cf072f913d57532c))
+
+
+### Bug Fixes
+
+* 🐛 The internationalization problem of repairing path selector ([8e6af20](https://github.com/viarotel-org/escrcpy/commit/8e6af2087e86a649ff0b89394978add4dc2328e2))
+* 💄 Optimize wireless connection user interface ([50ae742](https://github.com/viarotel-org/escrcpy/commit/50ae7426c0d2c329173d9d7b8e160d1faddaef00))
+
+
+### Performance Improvements
+
+* 💄 Optimization of the operation bar at the top of the equipment list ([81bd3d9](https://github.com/viarotel-org/escrcpy/commit/81bd3d986bc091113cac3536af3e108653813b39))
+* 💄 Optimized operation button layout ([16f9535](https://github.com/viarotel-org/escrcpy/commit/16f953538b819b9cfaad59e9c8f3eb9d32d0f5b1))
+
+## [1.21.4](https://github.com/viarotel-org/escrcpy/compare/v1.21.3...v1.21.4) (2024-07-14)
+
+
+### Performance Improvements
+
+* ♻️ Optimize custom startup performance ([abd468b](https://github.com/viarotel-org/escrcpy/commit/abd468bd433e14bdda737f42e748ca7a947b2917))
+* ♻️ Perfect allSettledWrapper method ([5b7d0af](https://github.com/viarotel-org/escrcpy/commit/5b7d0af683a56ef93bda8708e83bbda0258d531a))
+
+## [1.21.3](https://github.com/viarotel-org/escrcpy/compare/v1.21.2...v1.21.3) (2024-07-13)
+
+
+### Bug Fixes
+
+* Fix the width problem of custom startup pop-up windows ([9a7e56b](https://github.com/viarotel-org/escrcpy/commit/9a7e56b8ebc08fb20eadf0b2f853441ea28c6a80))
+
+## [1.21.2](https://github.com/viarotel-org/escrcpy/compare/v1.21.1...v1.21.2) (2024-07-13)
+
+
+### Bug Fixes
+
+* 🐛 Fix terminal style abnormalities in dark theme ([3d4dc7c](https://github.com/viarotel-org/escrcpy/commit/3d4dc7c98164fd01780989e892948c06f30018a3))
+
+
+### Performance Improvements
+
+* ♻️ Improve code robustness ([2f389af](https://github.com/viarotel-org/escrcpy/commit/2f389af834413b9018cad1b3ae977902386fb5da))
+* 🚀 Optimize batch operation interaction ([343eab2](https://github.com/viarotel-org/escrcpy/commit/343eab2e110d065869ff95140b2ba98a365dd65d))
+
+## [1.21.1](https://github.com/viarotel-org/escrcpy/compare/v1.21.0...v1.21.1) (2024-07-13)
+
+
+### Bug Fixes
+
+* 🐛 Fix dependency build errors ([5b02621](https://github.com/viarotel-org/escrcpy/commit/5b026215a9f964b08fd86503d3e5204a60b559ef))
+
+## [1.21.0](https://github.com/viarotel-org/escrcpy/compare/v1.20.1...v1.21.0) (2024-07-13)
+
+
+### Features
+
+* 🎉 Support batch execution script function ([8097022](https://github.com/viarotel-org/escrcpy/commit/8097022798ca3ea95ed6530a722f321a862f2e23))
+* 🚀 Support execution script function ([2013413](https://github.com/viarotel-org/escrcpy/commit/2013413611b3efe44811b230ceea036eba310026))
+
+
+### Bug Fixes
+
+* 🐛 Repair the problem of equipment width in the English state ([25c42d9](https://github.com/viarotel-org/escrcpy/commit/25c42d94ec38210c519db78ad60b32813e9ff2f5))
+* 📝 Update Translation ([33b0181](https://github.com/viarotel-org/escrcpy/commit/33b018110cc7727a822f61b97ae5c5f1211adb0c))
+
+
+### Performance Improvements
+
+* ✅ Support batch screenshot and other performance optimization ([db9e3e7](https://github.com/viarotel-org/escrcpy/commit/db9e3e791e3a168c2f3cdef75d5cf1f834bce484))
+* ✨ Support for custom startup mirroring ([677f30c](https://github.com/viarotel-org/escrcpy/commit/677f30cdc2ab87aef1cf2c3ec1b1d3bc066342c6))
+* 🐛 Fix the problem of frequently trigger preservation of preferences ([8261916](https://github.com/viarotel-org/escrcpy/commit/826191617215db3cf027f0ec22530052c8dd97fe))
+
+## [1.20.1](https://github.com/viarotel-org/escrcpy/compare/v1.20.0...v1.20.1) (2024-07-04)
+
+
+### Bug Fixes
+
+* 🐛 Fix batch text spelling errors ([062c689](https://github.com/viarotel-org/escrcpy/commit/062c689755df5bcc5f8e38605c7f101762d7ada0))
+
+## [1.20.0](https://github.com/viarotel-org/escrcpy/compare/v1.19.4...v1.20.0) (2024-07-04)
+
+
+### Features
+
+* ✨ Add batch installation application function ([37ce245](https://github.com/viarotel-org/escrcpy/commit/37ce2457bce9a1b661c6db7162023f53268833f5))
+
+
+### Performance Improvements
+
+* 🚀 Add mouse binding options ([7ee4ba4](https://github.com/viarotel-org/escrcpy/commit/7ee4ba4f2b177e6dbfce85036425b51bfa35ecff))
+
+## [1.19.4](https://github.com/viarotel-org/escrcpy/compare/v1.19.3...v1.19.4) (2024-07-02)
+
+
+### Bug Fixes
+
+* 🐛 Fix terminal style problems ([9fc1ded](https://github.com/viarotel-org/escrcpy/commit/9fc1ded583fd1c48bdb1890e7b27021920716cbc))
+* Update Chinese language translations ([b8d77e3](https://github.com/viarotel-org/escrcpy/commit/b8d77e39214823b6c7903f926d68aead4f00274b))
+
+
+### Performance Improvements
+
+* 🚀 Update to scrcpy v2.5 ([22cc5a3](https://github.com/viarotel-org/escrcpy/commit/22cc5a3bc722d882a70e70ea2f45aa7577b01df5))
+
+## [1.19.3](https://github.com/viarotel-org/escrcpy/compare/v1.19.2...v1.19.3) (2024-06-13)
+
+
+### Bug Fixes
+
+* 🐛 Abnormal operations cause the program that cannot be closed ([b989140](https://github.com/viarotel-org/escrcpy/commit/b9891404f4251b7fa22cc0481d1cda29c11092dd))
+
+## [1.19.2](https://github.com/viarotel-org/escrcpy/compare/v1.19.1...v1.19.2) (2024-06-03)
+
+
+### Bug Fixes
+
+* 🐛 Automatically apply local languages ([0cc8208](https://github.com/viarotel-org/escrcpy/commit/0cc8208dd1bb51f700dcab213bd598ba07186bbb))
+
+## [1.19.1](https://github.com/viarotel-org/escrcpy/compare/v1.19.0...v1.19.1) (2024-05-26)
+
+
+### Bug Fixes
+
+* 🐛 In some cases, the light mode is abnormal ([ea227e0](https://github.com/viarotel-org/escrcpy/commit/ea227e0792b4938c8763efc833c34e8e7d587323))
+* 🐛 Search for shortcut key conflicts ([c70e6ca](https://github.com/viarotel-org/escrcpy/commit/c70e6ca2fc716ecea495b032ec0c9f4c2fc7e421))
+
+
+### Performance Improvements
+
+* ♻️ Search prompts ([0d963aa](https://github.com/viarotel-org/escrcpy/commit/0d963aab65297964a19b5e7ed1982732e96bcfcb))
+
+## [1.19.0](https://github.com/viarotel-org/escrcpy/compare/v1.18.4...v1.19.0) (2024-05-15)
+
+
+### Features
+
+* 🚀 Add page search function ([6dd8244](https://github.com/viarotel-org/escrcpy/commit/6dd8244ed58b8bb4cde17c9fe991ad5704e55057))
+* 🚀 Update dependencies to support ESM ([9f1696f](https://github.com/viarotel-org/escrcpy/commit/9f1696f289bbc8f833e9a6494d18f1d5d025bf9c))
+
+
+### Bug Fixes
+
+* 🐛 Resolving build failures ([8460945](https://github.com/viarotel-org/escrcpy/commit/8460945bd62de0d9be0b9767a3a0ece809ef05f0))
+* 🐛 Tips unavailable ([603e4e9](https://github.com/viarotel-org/escrcpy/commit/603e4e98d251a14ffdde2b48f1f064522154e6fe))
+
+
+### Performance Improvements
+
+* ♻️ FindInPage API ([fcf8269](https://github.com/viarotel-org/escrcpy/commit/fcf8269e0eba3638d8f9364e5c238c406b6fc9fe))
+* ♻️ Optimize dark mode ([2f2e1cf](https://github.com/viarotel-org/escrcpy/commit/2f2e1cfcd6ff6eae376bd260dc16d1e674e34286))
+* ♻️ Search interaction ([a195b7e](https://github.com/viarotel-org/escrcpy/commit/a195b7ead7c6664e0138f99a58b67f6800fb681f))
+* ♻️ Search variable name ([7c55e50](https://github.com/viarotel-org/escrcpy/commit/7c55e50edc1afc162696b9581ae5d25c01580ffc))
+* 🐛 Global search error ([091d503](https://github.com/viarotel-org/escrcpy/commit/091d5035dd7d6d91f7377d3cfb738c21d0c8e4f3))
+* 🚀 优化页面查找工具性能 ([8587977](https://github.com/viarotel-org/escrcpy/commit/8587977627ba1c8635b6b536dc88aeb5c067da5c))
+
+## [1.18.4](https://github.com/viarotel-org/escrcpy/compare/v1.18.3...v1.18.4) (2024-05-04)
+
+
+### Bug Fixes
+
+* 🐛 Wireless adb does not support Spaces ([1f27597](https://github.com/viarotel-org/escrcpy/commit/1f27597ff3c31fa88867199ca13e43ba20ffa088))
+
+## [1.18.3](https://github.com/viarotel-org/escrcpy/compare/v1.18.2...v1.18.3) (2024-04-12)
+
+
+### Performance Improvements
+
+* ♻️ i18n configuration ([1ca0469](https://github.com/viarotel-org/escrcpy/commit/1ca0469ff2df2ecf66b07bb3a24040490cd8563b))
+
+## [1.18.2](https://github.com/viarotel-org/escrcpy/compare/v1.18.1...v1.18.2) (2024-04-11)
+
+
+### Bug Fixes
+
+* 🐛 zh_TW Language support ([885af3a](https://github.com/viarotel-org/escrcpy/commit/885af3aa1d238a18487727ca13a6bf739dca6934))
+
+## [1.18.1](https://github.com/viarotel-org/escrcpy/compare/v1.18.0...v1.18.1) (2024-04-11)
+
+
+### Bug Fixes
+
+* 🔧 Repair merge zh-TW failed ([81ff63f](https://github.com/viarotel-org/escrcpy/commit/81ff63f1fb2703616b6fb195e0bb510a597514a8))
+
+
+### Performance Improvements
+
+* 🔧 Update workflows ([343423e](https://github.com/viarotel-org/escrcpy/commit/343423ea77418561f156cfd9f9e3a6bc559b0baa))
+
+## [1.18.0](https://github.com/viarotel-org/escrcpy/compare/v1.17.8...v1.18.0) (2024-04-11)
+
+
+### Features
+
+* Add a simple zh_TW Traditional Chinese locale ([cec6539](https://github.com/viarotel-org/escrcpy/commit/cec6539c1dde2551edf284d5e8aca1a101a583b6))
+
+## [1.17.8](https://github.com/viarotel-org/escrcpy/compare/v1.17.7...v1.17.8) (2024-03-29)
+
+
+### Bug Fixes
+
+* 🐛 Camera configuration conflict ([07cc5f3](https://github.com/viarotel-org/escrcpy/commit/07cc5f3cc2140a0fa90ae1d72608cc2c468bb80e))
+* 🐛 OTG configuration conflict ([576d287](https://github.com/viarotel-org/escrcpy/commit/576d287cf4636564d526d2af6aa4e9c5aaa1f83b))
+* 🐛 OTG mode: could not turn screen off ([c5bed0e](https://github.com/viarotel-org/escrcpy/commit/c5bed0e895461c21e3588314b6e244074403610e))
+
+## [1.17.7](https://github.com/viarotel-org/escrcpy/compare/v1.17.6...v1.17.7) (2024-03-27)
+
+
+### Bug Fixes
+
+* ♻️ Remove the redundant imports ([a06708f](https://github.com/viarotel-org/escrcpy/commit/a06708ff19f31ea9231e620a5f780b8c714b0feb))
+
+
+### Performance Improvements
+
+* ♻️ Optimize delete history logic ([780e3b9](https://github.com/viarotel-org/escrcpy/commit/780e3b9abc199800b0cdb10c5d48d591cf91cf29))
+* ♻️ Support delete historical connection ([c82560f](https://github.com/viarotel-org/escrcpy/commit/c82560f205321653d51d74ea3e3b44e96c41a96f))
+* 💄 Wireless style optimization ([ba51fe3](https://github.com/viarotel-org/escrcpy/commit/ba51fe3db79c8beb81a237baf2454a0a5c1eb041))
+
+## [1.17.6](https://github.com/viarotel-org/escrcpy/compare/v1.17.5...v1.17.6) (2024-03-21)
+
+
+### Performance Improvements
+
+* ♻️ Supports automatic execution of mirrors on devices ([11e0884](https://github.com/viarotel-org/escrcpy/commit/11e0884c1128ec431f31f5025571eecbd3065a82))
+
+## [1.17.5](https://github.com/viarotel-org/escrcpy/compare/v1.17.4...v1.17.5) (2024-03-17)
+
+
+### Performance Improvements
+
+* 🌐 Improve i8n ([4fe55a3](https://github.com/viarotel-org/escrcpy/commit/4fe55a3329f325cb254515f364867e107dfdb278))
+
+## [1.17.4](https://github.com/viarotel-org/escrcpy/compare/v1.17.3...v1.17.4) (2024-03-14)
+
+
+### Performance Improvements
+
+* ♻️ Options in the preference settings ([dc711cb](https://github.com/viarotel-org/escrcpy/commit/dc711cbb64ff12e542974c07a817ec46a2f15700))
+
+## [1.17.3](https://github.com/viarotel-org/escrcpy/compare/v1.17.2...v1.17.3) (2024-03-13)
+
+
+### Performance Improvements
+
+* ♻️ Remove console log ([6e25eb7](https://github.com/viarotel-org/escrcpy/commit/6e25eb7ad6888065fa35bee3cddf33a55cc9fb70))
+
+## [1.17.2](https://github.com/viarotel-org/escrcpy/compare/v1.17.1...v1.17.2) (2024-03-10)
+
+
+### Bug Fixes
+
+* 🐛 Abnormal built-in terminal adb command ([368551a](https://github.com/viarotel-org/escrcpy/commit/368551a954664548f6b60ce7f9c6b8be30923edd))
+
+
+### Performance Improvements
+
+* ♻️ Update eslint config ([bf2d2b4](https://github.com/viarotel-org/escrcpy/commit/bf2d2b47b41d63f5d6ba69c5c11c46494a71813f))
+
+## [1.17.1](https://github.com/viarotel-org/escrcpy/compare/v1.17.0...v1.17.1) (2024-03-05)
+
+
+### Performance Improvements
+
+* ♻️ Interactive logic optimization ([193f80a](https://github.com/viarotel-org/escrcpy/commit/193f80a2a4611bb718ab3754249ed2b3d688e5a2))
+* ♻️ Optimize design and code ([d507c2d](https://github.com/viarotel-org/escrcpy/commit/d507c2d0dbf5699ab0f311d78d1686ea36332b51))
+* ♻️ Optimize equipment operation ([389ac33](https://github.com/viarotel-org/escrcpy/commit/389ac335b8801076ff9bb89c0c5f4899d142ff1b))
+* ➖ Remove redundant packages ([f9e4a0e](https://github.com/viarotel-org/escrcpy/commit/f9e4a0e77465e3e89e5058553383dec104fc096f))
+* 💄 Optimize dark mode styles ([1cac054](https://github.com/viarotel-org/escrcpy/commit/1cac054d413e3f1b56e9dd8e430671805d7fe3ae))
+
+## [1.17.0](https://github.com/viarotel-org/escrcpy/compare/v1.16.8...v1.17.0) (2024-03-04)
+
+
+### Features
+
+* 🎉 Update to scrcpy v2.4 ([02a4d39](https://github.com/viarotel-org/escrcpy/commit/02a4d398208fdb14a6935eb1994e23a8364a9f7a))
+
+## [1.16.8](https://github.com/viarotel-org/escrcpy/compare/v1.16.7...v1.16.8) (2023-12-27)
+
+
+### Bug Fixes
+
+* 🐛 The maximum size description error ([01fd926](https://github.com/viarotel-org/escrcpy/commit/01fd9264a6f5ad03a0ab2de3cfba5e1d1e4c0924))
+
+## [1.16.7](https://github.com/viarotel-org/escrcpy/compare/v1.16.6...v1.16.7) (2023-12-19)
+
+
+### Performance Improvements
+
+* ♻️ Options describe ([1349b2a](https://github.com/viarotel-org/escrcpy/commit/1349b2a1f66c99413420a4fa93fcada62863a6cb))
+
+## [1.16.6](https://github.com/viarotel-org/escrcpy/compare/v1.16.5...v1.16.6) (2023-12-19)
+
+
+### Miscellaneous Chores
+
+* release 1.16.6 ([6d7778a](https://github.com/viarotel-org/escrcpy/commit/6d7778a6ca557d0605835893f767faeab4fc8656))
+
+## [1.16.5](https://github.com/viarotel-org/escrcpy/compare/v1.16.4...v1.16.5) (2023-12-19)
+
+
+### Performance Improvements
+
+* 📝 Control in stop charging ([8707eb5](https://github.com/viarotel-org/escrcpy/commit/8707eb54096d589a33b4ee138710033aa60071ed))
+
+## [1.16.4](https://github.com/viarotel-org/escrcpy/compare/v1.16.3...v1.16.4) (2023-12-19)
+
+
+### Bug Fixes
+
+* 🐛 Pairing code type issue ([889fe8c](https://github.com/viarotel-org/escrcpy/commit/889fe8c805e968feefc73661aa125ee0e197c006))
+
+## [1.16.3](https://github.com/viarotel-org/escrcpy/compare/v1.16.2...v1.16.3) (2023-12-03)
+
+
+### Performance Improvements
+
+* 🚀 Update scrcpy v2.3.1 ([3566655](https://github.com/viarotel-org/escrcpy/commit/3566655f46b7221973386ff423d91c426907386d))
+
+## [1.16.2](https://github.com/viarotel-org/escrcpy/compare/v1.16.1...v1.16.2) (2023-12-02)
+
+
+### Bug Fixes
+
+* 🐛 Bps unit error ([07f7ded](https://github.com/viarotel-org/escrcpy/commit/07f7ded0b5e1a2404b89217816d08eac5c904ba2))
+
+## [1.16.1](https://github.com/viarotel-org/escrcpy/compare/v1.16.0...v1.16.1) (2023-11-26)
+
+
+### Bug Fixes
+
+* 🐛 linux build error ([802f16f](https://github.com/viarotel-org/escrcpy/commit/802f16f7f00f28cc3319af6da9883c9efa299559))
+
+## [1.16.0](https://github.com/viarotel-org/escrcpy/compare/v1.15.0...v1.16.0) (2023-11-26)
+
+
+### Performance Improvements
+
+* ⚡️ Add webSocket ([ae96df0](https://github.com/viarotel-org/escrcpy/commit/ae96df03d40c8f2d2543910c3d6e1bc85978fedd))
+* ✨ Update to scrcpy v2.3 ([9e4f432](https://github.com/viarotel-org/escrcpy/commit/9e4f432333a41d56c9393853ea35b48375583d00))
+* 🍻 Update base copilot ([5ac5ee6](https://github.com/viarotel-org/escrcpy/commit/5ac5ee6e970ed7523fd27280a92ccb105da26b26))
+
+
+### Miscellaneous Chores
+
+* release 1.16.0 ([64d4486](https://github.com/viarotel-org/escrcpy/commit/64d44863c5942c8e9a9b42a42bab2cb04b22c2d3))
+
 ## [1.15.0](https://github.com/viarotel-org/escrcpy/compare/v1.14.3...v1.15.0) (2023-11-18)
 
 

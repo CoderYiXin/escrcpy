@@ -1,67 +1,78 @@
 import { resolve } from 'node:path'
-import { defineConfig, mergeConfig } from 'vite'
-import useElectron from 'vite-plugin-electron'
-import useRenderer from 'vite-plugin-electron-renderer'
-import { notBundle } from 'vite-plugin-electron/plugin'
-
-import useVue from '@vitejs/plugin-vue'
-import useEslint from 'vite-plugin-eslint'
-import useUnoCSS from 'unocss/vite'
-import useSvg from 'vite-svg-loader'
 import useI18n from '@intlify/unplugin-vue-i18n/vite'
+import useVueRouter from 'unplugin-vue-router/vite'
+import useVue from '@vitejs/plugin-vue'
+import useVueJsx from '@vitejs/plugin-vue-jsx'
+import useUnoCSS from 'unocss/vite'
+import { defineConfig, mergeConfig } from 'vite'
 
-import postcssConfig from './postcss.config.mjs'
+import { notBundle } from 'vite-plugin-electron/plugin'
+import useElectron from 'vite-plugin-electron/simple'
+import useRenderer from 'vite-plugin-electron-renderer'
+import useSvg from 'vite-svg-loader'
 
-const merge = (config, { command = '' } = {}) =>
-  mergeConfig(
+import postcssConfig from './postcss.config.js'
+
+import useAutoImports from './src/plugins/auto.js'
+
+const alias = {
+  $: resolve('src'),
+  $root: resolve(),
+  $renderer: resolve('src'),
+  $electron: resolve('electron'),
+  $control: resolve('control'),
+}
+
+function mergeCommon(config, { command = '' } = {}) {
+  return mergeConfig(
     {
       resolve: {
-        alias: {
-          '@root': resolve(),
-          '@electron': resolve('electron'),
-          '@renderer': resolve('src'),
-        },
+        alias,
       },
       plugins: [...(command === 'serve' ? [notBundle()] : [])],
     },
     config,
   )
+}
 
-// https://vitejs.dev/config/
-export default params =>
-  merge(
+export default function (args) {
+  return mergeCommon(
     defineConfig({
-      resolve: {
-        alias: {
-          '@': resolve('src'),
-          '@electron': resolve('electron'),
+      build: {
+        rollupOptions: {
+          input: {
+            main: resolve('index.html'),
+            control: resolve('control/index.html'),
+          },
         },
       },
       plugins: [
-        useEslint(),
         useUnoCSS(),
         useSvg(),
-        useVue(),
-        useI18n({
-          include: [resolve(__dirname, './src/locales/languages/**')],
+        useVueRouter({
+          exclude: ['src/pages/**/components'],
         }),
-        useElectron([
-          {
+        useVue(),
+        useVueJsx(),
+        useI18n({
+          include: [resolve('src/locales/languages/**')],
+        }),
+        useElectron({
+          main: {
             entry: 'electron/main.js',
-            vite: merge({}, params),
+            vite: mergeCommon({}, args),
           },
-          {
-            entry: 'electron/preload.js',
-            onstart(args) {
-              args.reload()
-            },
-            vite: merge({}, params),
+          preload: {
+            input: 'electron/preload.js',
+            vite: mergeCommon({}, args),
           },
-        ]),
+        }),
         useRenderer(),
+        ...useAutoImports(),
       ],
       css: {
         postcss: postcssConfig,
       },
     }),
   )
+}

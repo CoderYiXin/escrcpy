@@ -6,7 +6,7 @@ export default {
       label: 'preferences.record.format.name',
       field: '--record-format',
       type: 'Select',
-      value: 'mp4',
+      value: void 0,
       placeholder: 'preferences.record.format.placeholder',
       options: [
         {
@@ -19,41 +19,61 @@ export default {
         },
       ],
     },
-    lockVideoOrientation: {
-      label: 'preferences.record.lock-video-orientation.name',
-      field: '--lock-video-orientation',
+    audioRecordFormat: {
+      label: 'preferences.record.format.audio.name',
+      field: '--audio-record-format',
+      customized: true,
+      type: 'Select',
+      value: void 0,
+      placeholder: 'preferences.record.format.audio.placeholder',
+      options: [
+        {
+          label: 'opus',
+          value: 'opus',
+        },
+        {
+          label: 'wav',
+          value: 'wav',
+        },
+        {
+          label: 'mka',
+          value: 'mka',
+        },
+        {
+          label: 'flac',
+          value: 'flac',
+        },
+        {
+          label: 'aac',
+          value: 'aac',
+        },
+        {
+          label: 'm4a',
+          value: 'm4a',
+        },
+      ],
+    },
+    recordOrientation: {
+      label: 'preferences.record.orientation.name',
+      field: '--record-orientation',
       type: 'Select',
       value: undefined,
-      placeholder: 'preferences.record.lock-video-orientation.placeholder',
+      placeholder: 'preferences.record.orientation.placeholder',
       options: [
         { label: '0°', value: '0' },
-        { label: '-90°', value: '1' },
-        { label: '180°', value: '2' },
-        { label: '90°', value: '3' },
+        { label: '90°', value: '90' },
+        { label: '180°', value: '180' },
+        { label: '270°', value: '270' },
       ],
     },
     timeLimit: {
       label: 'preferences.record.time-limit.name',
       field: '--time-limit',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.record.time-limit.placeholder',
       append: 's',
       span: 24,
-    },
-    noVideo: {
-      label: 'preferences.record.disable-video.name',
-      field: '--no-video',
-      type: 'Switch',
-      value: undefined,
-      placeholder: 'preferences.record.disable-video.placeholder',
-    },
-    noAudio: {
-      label: 'preferences.record.disable-audio.name',
-      field: '--no-audio',
-      type: 'Switch',
-      value: undefined,
-      placeholder: 'preferences.record.disable-audio.placeholder',
     },
     noVideoPlayback: {
       label: 'preferences.record.no-video-playback.name',

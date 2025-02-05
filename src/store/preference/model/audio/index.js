@@ -3,6 +3,22 @@ export default {
   field: 'scrcpy',
 
   children: {
+    noAudio: {
+      label: 'preferences.audio.disable-audio.name',
+      field: '--no-audio',
+      type: 'Switch',
+      value: undefined,
+      placeholder: 'preferences.audio.disable-audio.placeholder',
+      tips: 'preferences.audio.disable-audio.tips',
+    },
+    audioDup: {
+      label: 'preferences.audio.audioDup.name',
+      field: '--audio-dup',
+      type: 'Switch',
+      value: undefined,
+      placeholder: 'preferences.audio.audioDup.placeholder',
+      tips: 'preferences.audio.audioDup.tips',
+    },
     audioSource: {
       label: 'preferences.audio.audio-source.name',
       field: '--audio-source',
@@ -18,6 +34,7 @@ export default {
     audioCode: {
       label: 'preferences.audio.audio-code.name',
       field: '--audio-code',
+      customized: true,
       type: 'AudioCodecSelect',
       value: undefined,
       placeholder: 'preferences.audio.audio-code.placeholder',
@@ -50,15 +67,15 @@ export default {
     audioBitRate: {
       label: 'preferences.audio.audio-bit-rate.name',
       field: '--audio-bit-rate',
-      type: 'Input.number',
+      type: 'Input',
       value: undefined,
       placeholder: 'preferences.audio.audio-bit-rate.placeholder',
-      append: 'kbps',
+      append: 'bps',
     },
     audioBuffer: {
       label: 'preferences.audio.audio-buffer.name',
       field: '--audio-buffer',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.audio.audio-buffer.placeholder',
       append: 'ms',
@@ -66,7 +83,7 @@ export default {
     audioOutputBuffer: {
       label: 'preferences.audio.audio-output-buffer.name',
       field: '--audio-output-buffer',
-      type: 'Input.number',
+      type: 'InputNumber',
       value: undefined,
       placeholder: 'preferences.audio.audio-output-buffer.placeholder',
       append: 'ms',

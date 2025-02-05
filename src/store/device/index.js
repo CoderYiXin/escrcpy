@@ -1,8 +1,16 @@
 import { defineStore } from 'pinia'
 import dayjs from 'dayjs'
 
-import { t } from '@/locales/index.js'
-import { isIPWithPort, replaceIP } from '@/utils/index.js'
+import { capitalize } from 'lodash-es'
+
+import { name as packageName } from '$root/package.json'
+
+import {
+  getCurrentDevices,
+  getHistoryDevices,
+  mergeDevices,
+  saveDevicesToStore,
+} from './helpers/index.js'
 
 const $appStore = window.appStore
 
@@ -16,7 +24,6 @@ export const useDeviceStore = defineStore({
   },
   getters: {},
   actions: {
-    replaceIP,
     init() {
       this.config = {
         ...($appStore.get('device') || {}),
@@ -24,8 +31,8 @@ export const useDeviceStore = defineStore({
 
       return this.config
     },
-    getLabel(device, param) {
-      if (!device) {
+    getLabel(device, params) {
+      if (!device.id) {
         return ''
       }
 
@@ -33,55 +40,71 @@ export const useDeviceStore = defineStore({
         ? device
         : this.list.find(item => item.id === device)
 
-      const labels = [data.$remark, data.$name, replaceIP(data.id)]
+      const appName = capitalize(packageName)
 
-      const model = {
-        recording: `🎥${t('device.record.progress')}...`,
-        time: dayjs().format('YYYY_MM_DD_HH_mm_ss'),
+      const deviceName = `${data?.remark || data.name}${data.wifi ? '(WIFI)' : ''}`
+
+      const currentTime = dayjs().format('YYYYMMDDHHmmss')
+
+      let value = `${appName}-${deviceName}`
+
+      const createPreset = type => `${appName}${capitalize(type)}-${deviceName}`
+
+      const presets = {
+        ...[
+          'mirror',
+          'camera',
+          'custom',
+          'synergy',
+        ]
+          .reduce((obj, type) => {
+            obj[type] = createPreset(type)
+            return obj
+          }, {}),
+        screenshot: `Screenshot-${deviceName}-${currentTime}`,
       }
 
-      if (typeof param === 'function') {
-        labels.push(param(model))
+      if (typeof params === 'function') {
+        value = params({
+          data,
+          appName,
+          deviceName,
+          currentTime,
+        })
       }
-      else if (param && typeof param === 'string') {
-        labels.push(model[param])
+      else if (params && typeof params === 'string') {
+        value = presets[params]
       }
-
-      const value = labels.filter(item => !!item).join('-')
 
       return value
     },
     setList(data) {
       this.list = data
     },
+    /**
+     * 获取设备列表
+     * @returns {Promise<Array>} 合并后的设备列表
+     */
     async getList() {
-      const res = await window.adbkit.getDevices()
+      const historyDevices = getHistoryDevices()
 
-      const data
-        = res?.map(item => ({
-          ...item,
-          id: item.id,
-          $name: item.model ? item.model.split(':')[1] : '未授权设备',
-          $unauthorized: item.type === 'unauthorized',
-          $wifi: isIPWithPort(item.id),
-          $remark: this.getRemark(item.id),
-        })) || []
+      const currentDevices = await getCurrentDevices()
 
-      this.list = data
+      const mergedDevices = mergeDevices(historyDevices, currentDevices)
 
-      return data
+      saveDevicesToStore(mergedDevices)
+
+      this.list = mergedDevices
+
+      return mergedDevices
     },
     setConfig(value, key = 'device') {
       $appStore.set(key, value)
       this.init()
     },
     setRemark(deviceId, value) {
-      $appStore.set(`device.${replaceIP(deviceId)}.remark`, value)
+      $appStore.set(['device', deviceId, 'remark'], value)
       this.init()
-    },
-    getRemark(deviceId) {
-      const value = $appStore.get(`device.${replaceIP(deviceId)}.remark`)
-      return value
     },
   },
 })

@@ -3,14 +3,6 @@ export default {
   field: 'scrcpy',
 
   children: {
-    otg: {
-      label: 'preferences.otg.enable.name',
-      field: '--otg',
-      type: 'Switch',
-      value: undefined,
-      placeholder: 'preferences.otg.enable.placeholder',
-      tips: 'preferences.otg.enable.tips',
-    },
     hidKeyboard: {
       label: 'preferences.otg.only-keyboard.name',
       field: '--hid-keyboard',

@@ -1,4 +1,4 @@
-import { extraResolve } from '@electron/helpers/index.js'
+import { extraResolve } from '$electron/helpers/index.js'
 import which from 'which'
 
 export const getGnirehtetPath = () => {

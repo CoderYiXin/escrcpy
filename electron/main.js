@@ -1,29 +1,38 @@
+import { createRequire } from 'node:module'
 import path from 'node:path'
-import { BrowserWindow, app, shell } from 'electron'
+import { fileURLToPath } from 'node:url'
+
+import remote from '@electron/remote/main'
 import { electronApp, optimizer } from '@electron-toolkit/utils'
+import { app, BrowserWindow, shell } from 'electron'
 import contextMenu from 'electron-context-menu'
-
-// process.js 必须位于非依赖项的顶部
-import './helpers/process.js'
-import appStore from './helpers/store.js'
-
+/** process.js 必须位于非依赖项的顶部 */
+import { isPackaged } from './helpers/process.js'
 import log from './helpers/log.js'
 import './helpers/console.js'
+import appStore from './helpers/store.js'
 
-import { icnsLogoPath, icoLogoPath, logoPath } from './configs/index.js'
+import { getLogoPath } from './configs/index.js'
 
-import events from './events/index.js'
+import ipc from './ipc/index.js'
+
+import control from '$control/electron/main.js'
+
+import { loadPage } from './helpers/index.js'
+
+import { Edger } from './helpers/edger/index.js'
+
+const require = createRequire(import.meta.url)
+const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 log.initialize({ preload: true })
 
 const debug = !!appStore.get('common.debug')
 
-log.info('Debug Status:', debug)
-
 if (!debug) {
   log.warn(
     'Debug Tips:',
-    'If you need to generate and view the running log, please start the debugging function on the preference setting page',
+    'If you need to generate and view the running log, please start the debugging function on the preference setting page'
   )
 }
 
@@ -32,7 +41,7 @@ contextMenu({
   showSelectAll: false,
   showSearchWithGoogle: false,
   showSaveImageAs: true,
-  showInspectElement: !app.isPackaged,
+  showInspectElement: !isPackaged,
 })
 
 // The built directory structure
@@ -48,41 +57,32 @@ contextMenu({
 process.env.DIST = path.join(__dirname, '../dist')
 
 let mainWindow
-// 🚧 Use ['ENV_NAME'] avoid vite:define plugin - Vite@2.x
-const VITE_DEV_SERVER_URL = process.env.VITE_DEV_SERVER_URL
 
 function createWindow() {
-  let icon = logoPath
+  const bounds = appStore.get('common.bounds') || {}
 
-  if (process.platform === 'win32') {
-    icon = icoLogoPath
-  }
-  else if (process.platform === 'darwin') {
-    icon = icnsLogoPath
-  }
+  const baseWidth = 768
+  const baseHeight = Number((baseWidth / 1.57).toFixed())
 
   mainWindow = new BrowserWindow({
-    // 这里设置的图标仅在开发模式生效，打包后将使用应用程序图标
-    ...(!app.isPackaged
-      ? {
-          icon,
-        }
-      : {}),
+    width: baseWidth,
+    minWidth: baseWidth,
+    height: baseHeight,
+    minHeight: baseHeight,
+    ...bounds,
     show: false,
-    width: 1200,
-    height: 800,
-    minWidth: 1200,
-    minHeight: 800,
+    icon: getLogoPath(),
     autoHideMenuBar: true,
     webPreferences: {
-      // nodeIntegration: true,
-      // contextIsolation: false,
-      preload: path.join(__dirname, './preload.js'),
+      preload: path.join(__dirname, 'preload.mjs'),
+      nodeIntegration: true,
       sandbox: false,
       spellcheck: false,
     },
-    backgroundColor: 'white',
   })
+
+  remote.enable(mainWindow.webContents)
+  remote.initialize()
 
   mainWindow.on('ready-to-show', () => {
     mainWindow.show()
@@ -93,14 +93,29 @@ function createWindow() {
     return { action: 'deny' }
   })
 
-  if (VITE_DEV_SERVER_URL) {
-    mainWindow.loadURL(VITE_DEV_SERVER_URL)
-  }
-  else {
-    mainWindow.loadFile(path.join(process.env.DIST, 'index.html'))
+  const edgeHidden = appStore.get('common.edgeHidden')
+  if(edgeHidden) {
+    new Edger(mainWindow)
   }
 
-  events(mainWindow)
+  ;['resize', 'move'].forEach((eventName) => {
+    mainWindow.on(eventName, () => {
+      if(mainWindow.isMaximized()) {
+        return false
+      }
+  
+      const bounds = mainWindow.getBounds()
+      appStore.set('common.bounds', {
+        ...bounds
+      })
+    })
+  })
+
+  loadPage(mainWindow)
+
+  ipc(mainWindow)
+
+  control(mainWindow)
 }
 
 app.whenReady().then(() => {
